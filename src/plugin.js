@@ -175,6 +175,15 @@ class PlaylistMenuItem extends Component {
     titleContainerEl.className = 'vjs-playlist-title-container';
     this.thumbnail.appendChild(titleContainerEl);
 
+    // Description
+if (item.description) {
+	var description = document.createElement('p');
+	description.className = 'vjs-playlist-description';
+	description.appendChild(document.createTextNode(item.description));
+	description.setAttribute('title', item.description);
+	li.appendChild(description);
+}
+
     // Up next
     const upNextEl = document.createElement('span');
     const upNextText = this.localize('Up Next');
